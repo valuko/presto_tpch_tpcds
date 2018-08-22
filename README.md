@@ -3,18 +3,18 @@ Source code for TPC-H and TPC-DS Benchmarks on PrestoDB. The benchmark can be ex
 
 ## Setup Guide
 
-Install PrestoDB BenchTo Service
-Download the executable jar: https://drive.google.com/open?id=1_IVBO2vfJZE5l2ATGDVWeCqoE3sFpeMQ 
+- Install PrestoDB BenchTo Service
+- Download the executable jar: https://drive.google.com/open?id=1_IVBO2vfJZE5l2ATGDVWeCqoE3sFpeMQ 
 
 ### Schema creation
-Run `./generate_schemas/generate-tpc*.sh` to generate the SQL for creating the appropriate schema for the benchmarks
-Run the generated SQL statements through the appropriate presto shell
+- Run `./generate_schemas/generate-tpc*.sh` to generate the SQL for creating the appropriate schema for the benchmarks
+- Run the generated SQL statements through the appropriate presto shell
 
 ## Usage
 
 ### BenchTo Guide
-Use the executable jar to run the BenchTo benchmark
-Follow the guide in Presto_README.md
+- Use the executable jar to run the BenchTo benchmark
+- Follow the guide in Presto_README.md
 
 ### Shell script
 - Modify `./shell_run/runlist_tpc*.pl` with the appropriate presto path and coordinator server name
