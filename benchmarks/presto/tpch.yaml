@@ -1,0 +1,15 @@
+datasource: presto
+query-names: presto/tpch/${query}.sql
+runs: 5
+prewarm-runs: 1
+before-execution: sleep-4s
+frequency: 7
+database: hive
+tpch_300: tpch_300gb_orc
+prefix: ""
+variables:
+# queries are assigned to groups so they execute within 15-60s each (for an arbitrary benchmark cluster)
+# groups are sorted by schema size
+  1:
+    query: q01, q02, q03, q04, q05, q06, q07, q08, q09, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22
+    schema: ${tpch_300}

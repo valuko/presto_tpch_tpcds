@@ -1,0 +1,25 @@
+benchmark-service:
+  url: http://localhost:8081
+
+data-sources:
+  presto:
+    url: jdbc:presto://prestonode1:8080
+    username: na
+    password: 
+    driver-class-name: com.facebook.presto.jdbc.PrestoDriver
+
+environment:
+  name: TPCH-DEVENV
+
+presto:
+  url: http://prestonode1:8080
+
+benchmark:
+  feature:
+    presto:
+      metrics.collection.enabled: true
+
+macros:
+  sleep-4s:
+    command: echo "Sleeping for 10s" && sleep 10
+   

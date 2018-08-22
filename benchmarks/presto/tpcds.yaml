@@ -1,0 +1,15 @@
+datasource: presto
+query-names: presto/tpcds/${query}.sql
+runs: 5
+prewarm-runs: 1
+before-execution: sleep-4s
+# frequency: 7
+database: hive
+tpcds_300: tpcds_300gb_orc
+prefix: ""
+variables:
+# queries are assigned to groups so they execute within 15-60s each (for an arbitrary benchmark cluster)
+# groups are sorted by schema size
+  1:
+    query: q01, q02, q03, q05, q06, q07, q08, q09, q10, q12, q13, q14_1, q14_2, q15, q16, q17, q18, q20, q21, q22, q23_1, q23_2, q24_1, q24_2, q25, q26, q27, q28, q29, q31, q32, q33, q34, q35, q36, q37, q38, q39_1, q39_2, q40, q41, q42, q43, q44, q45, q46, q48, q49, q50, q51, q52, q53, q54, q55, q56, q58, q59, q60, q61, q62, q63, q64, q65, q66, q67, q68, q69, q70, q71, q73, q75, q76, q77, q78, q79, q80, q81, q82, q83, q84, q85, q86, q87, q88, q89, q90, q91, q92, q93, q94, q96, q97, q98, q99, q04, q11, q19, q30, q47, q57, q74, q78, q95, q72
+    schema: ${tpcds_300}
